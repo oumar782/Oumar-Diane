@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mes services</title> 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css">
+    <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.min.js"></script>
+    <style>
+
+body {
+    min-height: 100vh;
+    justify-content: center;
+    align-items: center;
+    background: url("Images/person-front-computer-working-html.jpg") center/cover;
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+}
+
+
+
+main {
+    margin-top: 70px;
+    width: 1300px;
+    margin: 0 auto;
+    background-color: rgba(8, 8, 8, 0.5);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 4px 6px rgba(27, 27, 27, 0.1);
+    border-radius: 10px;
+    padding: 20px;
+}
+
+.contenuser {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2.5rem;
+    margin: 2rem auto;
+    max-width: 1200px;
+    padding: 0 1rem;
+}
+
+.serbox {
+    background-color: rgba(8, 8, 8, 0.5);
+    height: 300px;
+    border-radius: 3rem;
+    border: 5px solid transparent;
+    cursor: pointer;
+    transition: 0.4s ease-in-out;
+    backdrop-filter: blur(10px);
+    color: white;
+}
+
+.serbox:hover {
+    background: gray;
+    color: black;
+    border: 5px solid #333;
+}
+
+.serbox h4 {
+    font-size: 3rem;
+    font-weight: 800;
+    line-height: 2;
+    margin: 0;
+    color: skyblue;
+}
+
+.serbox p {
+    font-size: 1.6rem;
+    font-weight: 600;
+    line-height: 1.7;
+    margin: 0;
+    overflow: hidden;
+}
+
+.oi {
+    color: skyblue;
+    font-size: 4.5rem;
+    margin-top: 2px;
+}
+
+strong {
+    color: skyblue;
+}
+
+.heading {
+    font-size: 4.5rem;
+    margin-top: 25px;
+}
+
+/* Responsive Styles */
+@media (max-width: 1200px) {
+    main {
+        width: 100%;
+        padding: 10px;
+    }
+
+    .contenuser {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+
+    .serbox h4 {
+        font-size: 2.5rem;
+    }
+
+    .serbox p {
+        font-size: 1.4rem;
+    }
+
+    .heading {
+        font-size: 3rem;
+    }
+}
+
+
+@media (max-width: 480px) {
+    header .logo {
+        font-size: 1.2rem;
+    }
+
+    .serbox h4 {
+        font-size: 1.8rem;
+    }
+
+    .serbox p {
+        font-size: 1rem;
+    }
+
+    .heading {
+        font-size: 2rem;
+    }
+}
+
+footer {
+    background: rgba(0, 0, 0, 0.8);
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+.footer .social-icons a {
+    color: white;
+    margin: 0 10px;
+    font-size: 1.5rem;
+}
+
+.footer .social-icons a:hover {
+    color: skyblue;
+}
+
+.bx-menu {
+    display: none;
+}
+            header {
+            background: linear-gradient(to bottom, #333, #000);
+            color: #fff;
+            padding: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        header h1 {
+            margin: 0;
+            font-size: 32px;
+            font-weight: bold;
+        }
+        .logo-container {
+            display: flex;
+            align-items: center;
+        }
+        .logo-container img {
+            max-height: 50px;
+        }
+        .logo-container h1 {
+            margin-left: 10px;
+            font-size: 32px;
+            font-weight: bold;
+            color: antiquewhite;
+        }
+     /* Global styles for mobile responsiveness */
+@media (max-width: 768px) {
+    /* Style for the header */
+    header {
+        flex-direction: row;
+        justify-content: space-between;
+        padding: 10px;
+    }
+
+    /* Menu icon positioned to the left */
+    header .bx-menu {
+        display: block;
+        font-size: 2rem;
+        cursor: pointer;
+        color: white;
+        margin-right: auto; /* Move the icon to the left */
+    }
+
+    /* Mobile navigation menu */
+    header nav {
+        position: absolute;
+        top: 70px;
+        left: -100%;
+        width: 100%;
+        background: rgba(8, 8, 8, 0.9);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        transition: left 0.3s ease-in-out;
+        z-index: 999;
+        text-decoration: none;
+
+    }
+
+    header nav a {
+        margin: 10px 0;
+        font-size: 1.2rem;
+        text-decoration: none;
+
+    }
+
+    nav.active {
+        left: 0;
+        text-decoration: none;
+
+    }
+}
+    </style>
+</head>
+<body>
+    <header>
+        <a href="#" class="logo"style="text-decoration: none;"><span>Oumar</span> Diané</a>
+        <span class="menu-btn" id="menu-btn"><i class="bx bx-menu"></i></span>
+        <nav id="navbar">
+            <a href="A Propos.html" style="text-decoration: none;">À propos</a>
+            <a href="Education.html"style="text-decoration: none;">Éducation</a>
+            <a href="Service.html"style="text-decoration: none;">Services</a>
+            <a href="reel.html"style="text-decoration: none;">Réalisations</a>
+            <a href="contact.php"style="text-decoration: none;">Contact</a>
+        </nav>
+    </header>
+
+    <main>
+        
+        <h2 class="heading" style="margin-top: 58px;">Mes <span style="color: skyblue;">services</span> </h2>
+        <div class="contenuser">
+            <div class="serbox">
+                <h4> Conception de sites web</h4>
+                <p>J'offre des services complets pour la <strong>conception et la réalisation de vos sites web</strong>. Je me spécialise dans la création de sites web adaptés à vos besoins spécifiques. </p>
+            </div>
+            <div class="serbox">
+                <h4>Conception des applications Desktop</h4>
+                <p>Je propose des services complets pour la <strong>conception de vos applications desktop</strong>, visant à améliorer la performance de votre entreprise et à résoudre les problèmes au sein de vos entités.</p>
+            </div>
+            <div class="serbox">
+                <h4>Maintenance des logiciels</h4>
+                <p>Je garantit le bon fonctionnement de vos logiciels tout au long de leur cycle de vie. Cela inclut la correction des bogues, la mise à jour des fonctionnalités, l'amélioration des performances en maximisant la fiabilité et l'efficacité des logiciels.</p>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container text-center">
+            <p>&copy; 2024 Oumar Diané - Tous droits réservés</p>
+            <div class="social-icons">
+                <a href="https://web.facebook.com/pdgoumar.diane/"><i class="bx bxl-facebook"></i></a>
+                <a href="tel:+2120721976288"><i class="bx bxl-whatsapp"></i></a>
+
+                <a href="https://www.linkedin.com/in/oumar-diane-173a53266/"><i class="bx bxl-linkedin"></i></a>
+                <a href="https://www.instagram.com/pdgoumarkoop/"><i class="bx bxl-instagram"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.getElementById('menu-btn').addEventListener('click', function() {
+            const navbar = document.getElementById('navbar');
+            navbar.classList.toggle('active');
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Accueil</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css">
+
+    <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.min.js"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+        * {
+            box-sizing: border-box;
+            font-family: "Poppins", sans-serif;
+        }
+
+        body {
+            background-color: #000;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background: linear-gradient(to bottom, #333, #000);
+            color: #fff;
+            padding: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            left: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 6px rgba(27, 27, 27, 0.1);
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            text-decoration: none;
+            color: #fff;
+        }
+
+        .menu-btn {
+            display: none;
+            font-size: 1.5rem;
+            color: #fff;
+            cursor: pointer;
+        }
+
+        nav {
+            display: flex;
+            gap: 1rem;
+        }
+
+        nav a {
+            color: #ddd;
+            text-decoration: none;
+            font-size: 1.5rem;
+            padding: 0.5rem 1rem;
+            transition: color 0.3s;
+        }
+
+        nav a.active {
+            color: skyblue;
+            font-weight: 700;
+            text-decoration: none;
+
+        }
+
+        nav a:hover {
+            color: skyblue(15, 62, 217);
+            text-decoration: none;
+
+        }
+
+        .content-accueil h1 {
+            font-size: 4rem;
+            font-weight: 700;
+            margin: 1.5rem 0;
+            line-height: 1.2;
+            color: white;
+        }
+
+        .content-accueil h3 {
+            margin-bottom: 2rem;
+            font-size: 3rem;
+            color: #ddd;
+        }
+
+        .content-accueil p {
+            font-size: 1.2rem;
+            font-weight: 500;
+            line-height: 1.8;
+            max-width: 600px;
+            color: #ddd;
+        }
+
+        .accueil-img img {
+            width: 100%;
+            max-width: 300px;
+            height: auto;
+            border-radius: 5%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+
+        .social-icons a {
+            color: #ddd;
+            font-size: 1.5rem;
+            margin: 0 0.5rem;
+            transition: color 0.3s;
+        }
+
+        .social-icons a:hover {
+            color: white;
+        }
+
+        .btn-group a {
+            color: white;
+            background-color: #007bff;
+            padding: 0.5rem 1rem;
+            border-radius: 1rem;
+            text-decoration: none;
+            font-size: 1rem;
+            font-weight: 500;
+            margin-right: 1rem;
+            transition: background-color 0.3s;
+            margin-top: 15px
+        }
+
+        .btn-group a:hover {
+            background-color: #0056b3;
+        }
+
+        @media (max-width: 992px) {
+            .content-accueil h1 {
+                font-size: 3rem;
+            }
+
+            .content-accueil h3 {
+                font-size: 2.5rem;
+            }
+
+            .content-accueil p {
+                font-size: 1rem;
+            }
+
+            .accueil-img img {
+                max-width: 250px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .logo {
+                font-size: 1.2rem;
+            }
+
+            .menu-btn {
+                display: block;
+            }
+
+            nav {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 100%;
+                right: 0;
+                background-color: skyblue(69, 27, 208, 0.5);
+                backdrop-filter: blur(15px);
+                width: 100%;
+                text-align: center;
+                z-index: 1000;
+                border-top: 1px solid #444;
+                border-bottom: 1px solid #444;
+            }
+
+            nav.active {
+                display: flex;
+        text-decoration: none;
+
+            }
+
+            nav a {
+                padding: 1rem;
+                display: block;
+            }
+
+            .content-accueil h1 {
+                font-size: 2.5rem;
+            }
+
+            .content-accueil h3 {
+                font-size: 2rem;
+            }
+
+            .content-accueil p {
+                font-size: 1rem;
+            }
+
+            .accueil-img img {
+                max-width: 200px;
+            }
+
+            .btn-group a {
+                font-size: 0.9rem;
+                padding: 0.5rem;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .content-accueil h1 {
+                font-size: 2rem;
+            }
+
+            .content-accueil h3 {
+                font-size: 1.5rem;
+            }
+
+            .content-accueil p {
+                font-size: 0.9rem;
+            }
+
+            .accueil-img img {
+                max-width: 150px;
+            }
+
+            .btn-group a {
+                font-size: 0.8rem;
+                padding: 0.4rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <a href="#" class="logo"><span>Oumar</span> Diané</a>
+        <span class="menu-btn" id="menu-btn"><i class="bx bx-menu"></i></span>
+
+        <nav id="navbar">
+            <a href="A Propos.html" >À propos</a>
+            <a href="Education.html">Éducation</a>
+            <a href="Service.html">Services</a>
+            
+            <a href="reel.html">Réalisations</a>
+            <a href="contact.php">Contact</a>
+        </nav>
+    </header>
+    <section class="accueil" id="accueil">
+        <div class="content-accueil">
+            <h1>Bonjour, je suis <span>Oumar Diané</span></h1>
+            <h3 class="text-animation">Développeur spécialisé dans la  
+                <span></span>
+            </h3>
+            <p class="po">Passionné par l'innovation technologique, je transforme des idées complexes en solutions élégantes et fonctionnelles. Mon expertise se traduit par des projets sur mesure qui allient performance et esthétique.
+                Chaque projet est une nouvelle opportunité de repousser les limites du possible, d'apporter des solutions créatives et de contribuer à votre succès.
+            </p>
+            <div class="social-icons">
+                <a href="https://web.facebook.com/pdgoumar.diane/"><i class="bx bxl-facebook"></i></a>
+                <a href="tel:+2120721976288"><i class="bx bxl-whatsapp"></i></a>
+
+                <a href="https://www.linkedin.com/in/oumar-diane-173a53266/"><i class="bx bxl-linkedin"></i></a>
+                <a href="https://www.instagram.com/pdgoumarkoop/"><i class="bx bxl-instagram"></i></a>
+            </div>
+            <div class="btn-group">
+                <a href="A Propos.html" class="btn">En savoir plus</a>
+                <a href="contact.php" class="btn">Contact</a>
+            </div>
+        </div>
+        <div class="accueil-img">
+            <img src="Images/oum.jpg" alt="Oumar Diane">
+        </div>
+    </section>
+    <footer>
+        <div class="container text-center">
+            <p style="color: #fff;">&copy; 2024 Oumar Diané - Tous droits réservés</p>
+        </div>
+    </footer>
+    <script>
+        document.getElementById('menu-btn').addEventListener('click', function() {
+            const navbar = document.getElementById('navbar');
+            navbar.classList.toggle('active');
+        });
+    </script>
+</body>
+</html>

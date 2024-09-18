@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mes Projets Réalisés</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css">
+    <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.min.js"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+        * {
+            box-sizing: border-box;
+            font-family: "Poppins", sans-serif;
+        }
+        
+        :root {
+            --main-color: #3498db; /* Couleur principale */
+            --bg-color: #2c3e50; /* Couleur de fond */
+        }
+
+        body {
+            background: linear-gradient(to bottom, #000, #fff);
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        header {
+            background: linear-gradient(to bottom, #333, #000);
+            color: #fff;
+            padding: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 32px;
+            font-weight: bold;
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+        }
+
+        .logo-container img {
+            max-height: 50px;
+        }
+
+        .logo-container h1 {
+            margin-left: 10px;
+            font-size: 32px;
+            font-weight: bold;
+            color: antiquewhite;
+        }
+
+        span {
+            color: skyblue;
+        }
+
+        main {
+            width: 100%;
+            max-width: 1350px;
+            margin: 2rem auto;
+            background-color: rgba(8, 8, 8, 0.5);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 4px 6px rgba(27, 27, 27, 0.1);
+            border-radius: 10px;
+            overflow: hidden;
+            padding: 2rem;
+            position: relative;
+        }
+
+        .portfolio h1 {
+            color: #fff;
+            text-align: center;
+            margin-bottom: 4rem;
+            font-size: 2.5rem;
+        }
+
+        .portcont {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2.5rem;
+            align-items: center;
+        }
+
+        .portbox {
+            position: relative;
+            border-radius: 2rem;
+            box-shadow: 0 0 1rem var(--main-color);
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .portbox img {
+            width: 100%;
+            height: auto;
+            max-width: 100%;
+            transition: transform 0.5s ease;
+        }
+
+        .portbox:hover img {
+            transform: scale(1.1);
+        }
+
+        .portlayer {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(rgba(0, 0, 0, 0.5), var(--main-color));
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            text-align: center;
+            padding: 1rem;
+            transform: translateY(100%);
+            transition: transform 0.5s ease;
+            color: #fff;
+        }
+
+        .portbox:hover .portlayer {
+            transform: translateY(0);
+        }
+
+        .portlayer h4 {
+            font-size: 2rem;
+            margin: 0;
+        }
+
+        .portlayer p {
+            font-size: 1.2rem;
+            margin: 0.3rem 0 1rem;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .portcont {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 767px) {
+            header {
+                padding: 10px;
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .logo-container {
+                margin-bottom: 10px;
+            }
+
+            header nav {
+                flex-direction: column;
+                margin: 0;
+            }
+
+            header nav a {
+                margin: 5px 0;
+            }
+
+            main {
+                width: 95%;
+                margin-top: 80px;
+                padding: 1rem;
+            }
+
+            .portlayer h4 {
+                font-size: 1.5rem;
+            }
+
+            .portlayer p {
+                font-size: 1rem;
+            }
+        }
+
+        @media (min-width: 1200px) {
+            main {
+                width: 1370px; /* Largeur fixe pour grands écrans */
+            }
+        }
+
+        @media (max-width: 1199px) and (min-width: 768px) {
+            main {
+                width: 90%;
+                margin: 0 auto;
+            }
+
+            header nav {
+                flex-direction: column;
+                margin-top: 10px;
+            }
+
+            header nav a {
+                margin: 5px 0;
+            }
+
+            h1 {
+                font-size: 24px;
+                margin-left: 0;
+                margin-top: 0;
+            }
+
+            table {
+                font-size: 12px;
+            }
+        }
+        
+        .bx-menu {
+    display: none;
+}
+            header {
+            background: linear-gradient(to bottom, #333, #000);
+            color: #fff;
+            padding: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        header h1 {
+            margin: 0;
+            font-size: 32px;
+            font-weight: bold;
+        }
+        .logo-container {
+            display: flex;
+            align-items: center;
+        }
+        .logo-container img {
+            max-height: 50px;
+        }
+        .logo-container h1 {
+            margin-left: 10px;
+            font-size: 32px;
+            font-weight: bold;
+            color: antiquewhite;
+        }
+     /* Global styles for mobile responsiveness */
+@media (max-width: 768px) {
+    /* Style for the header */
+    header {
+        flex-direction: row;
+        justify-content: space-between;
+        padding: 10px;
+    }
+
+    /* Menu icon positioned to the left */
+    header .bx-menu {
+        display: block;
+        font-size: 2rem;
+        cursor: pointer;
+        color: white;
+        margin-right: auto; /* Move the icon to the left */
+    }
+
+    /* Mobile navigation menu */
+    header nav {
+        position: absolute;
+        top: 70px;
+        left: -100%;
+        width: 100%;
+        background: rgba(8, 8, 8, 0.9);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        transition: left 0.3s ease-in-out;
+        z-index: 999;
+    }
+
+    header nav a {
+        margin: 10px 0;
+        font-size: 1.2rem;
+    }
+
+    nav.active {
+        left: 0;
+        text-decoration: none;
+
+    }
+}
+  
+    </style>
+</head>
+<body>
+    <header>
+        <a href="#" class="logo"style="text-decoration: none;"><span>Oumar</span> Diané</a>
+        <span class="menu-btn" id="menu-btn"><i class="bx bx-menu"></i></span>
+
+        <nav id="navbar">
+            <a href="A Propos.html" style="text-decoration: none;">À propos</a>
+            <a href="Education.html"style="text-decoration: none;">Éducation</a>
+            <a href="Service.html"style="text-decoration: none;">Services</a>
+            
+            <a href="reel.html"style="text-decoration: none;">Réalisations</a>
+            <a href="contact.php"style="text-decoration: none;">Contact</a>
+        </nav>
+    </header>
+    <main>
+        <h1 class="heading" style="margin-top: 35px;">Mes <span>projets</span> Réalisés:</h1>
+        <div class="portcont">
+            <div class="portbox">
+                <img src="Images/ings.jpg" alt="Application de gestion de projet Ingénieur">
+                <div class="portlayer">
+                    <h4>Application de gestion de projet Ingénieur.</h4>
+                    <p>Le projet visait à développer une application pour une entreprise d'ingénierie ayant des problèmes de suivi de projets, affectant la confiance et la satisfaction des clients. L'application devait centraliser les données, automatiser les processus et améliorer l'efficacité opérationnelle pour assurer une gestion proactive des projets et renforcer la satisfaction client.</p>
+                </div>
+            </div>
+            <div class="portbox">
+                <img src="Images/WhatsApp Image 2024-08-27 à 09.30.27_6dc47fb9.jpg" alt="Projet 2">
+                <div class="portlayer">
+                    <h4>Application de Réparation, Maintenance Informatique.</h4>
+                    <p>L’objectif de ce projet était de développer une application pour une agence qui propose des services de réparation, de maintenance informatique et de création de sites web, afin de faciliter la gestion des demandes de services et de simplifier les processus internes de l’agence.</p>
+                </div>
+            </div>
+            <div class="portbox">
+                <img src="Images/etc.jpg" alt="Projet 3">
+                <div class="portlayer">
+                    <h4>Site web de vitrine pour une entreprise ingenieur.</h4>
+                    <p>Ce site web a pour objectif de présenter la marque de l'entreprise ETC-BTP, de détailler ses services et de proposer une solution pour soumettre des demandes de projet à distance, tout en facilitant les prises de contact avec l'entreprise.</p>
+                </div>
+            </div>
+            <div class="portbox">
+                <img src="Images/Bladi.jpg" alt="Projet 4">
+                <div class="portlayer">
+                    <h4>Site web de vitrine des proverbes marocains en fonction des dialectes.</h4>
+                    <p>Ce site web a pour objectif de présenter divers proverbes illustrant la sagesse marocaine, tout en mettant en valeur les différents dialectes.</p>
+                </div>
+            </div>
+            <div class="portbox">
+                <img src="Images/sup.jpg" alt="Projet 5">
+                <div class="portlayer">
+                    <h4>Suivi de vente dans un supermarché</h4>
+                    <p>Ce projet met en avant les ventes des produits dans un supermarché en générant automatiquement les factures des ventes.</p>
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer class="footer">
+        <div class="container text-center">
+            <p style="color: black;">&copy; 2024 Oumar Diané - Tous droits réservés</p>
+            <div class="social-icons">
+                <a href="https://web.facebook.com/pdgoumar.diane/"><i class="bx bxl-facebook"></i></a>
+                <a href="tel:+2120721976288"><i class="bx bxl-whatsapp"></i></a>
+
+                <a href="https://www.linkedin.com/in/oumar-diane-173a53266/"><i class="bx bxl-linkedin"></i></a>
+                <a href="https://www.instagram.com/pdgoumarkoop/"><i class="bx bxl-instagram"></i></a>
+            </div>
+        </div>
+    </footer>
+    <script>
+        document.getElementById('menu-btn').addEventListener('click', function() {
+            const navbar = document.getElementById('navbar');
+            navbar.classList.toggle('active');
+        });
+    </script>
+</body>
+</html>

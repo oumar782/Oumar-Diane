@@ -1,0 +1,674 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A propos</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css">
+    <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.min.js"></script>
+    <style>
+        body {
+            min-height: 100vh;
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: url("Images/4.png") center/cover;
+            display: flex;
+            flex-direction: column;
+        }
+       
+
+        main {
+            margin-top: 70px; /* Adjust this value if your header height changes */
+            width: 1450px;
+            height: auto; /* Adjusted to fit content */
+            margin: 0 auto; /* Center the main content horizontally */
+            background-color: rgba(8, 8, 8, 0.5);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 4px 6px rgba(27, 27, 27, 0.1);
+            border-radius: 10px;
+            overflow: hidden;
+            padding: 20px;
+        }
+
+        .prest img {
+            max-width: 100%;
+            height: auto;
+        }
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+* {
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+header {
+            background: linear-gradient(to bottom, #333, #000);
+            color: #fff;
+            padding: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        header h1 {
+            margin: 0;
+            font-size: 32px;
+            font-weight: bold;
+        }
+        .logo-container {
+            display: flex;
+            align-items: center;
+        }
+        .logo-container img {
+            max-height: 50px;
+        }
+        .logo-container h1 {
+            margin-left: 10px;
+            font-size: 32px;
+            font-weight: bold;
+            color: antiquewhite;
+        }
+     /* Global styles for mobile responsiveness */
+@media (max-width: 768px) {
+    /* Style for the header */
+    header {
+        flex-direction: row;
+        justify-content: space-between;
+        padding: 10px;
+    }
+
+    /* Menu icon positioned to the left */
+    header .bx-menu {
+        display: block;
+        font-size: 2rem;
+        cursor: pointer;
+        color: white;
+        margin-right: auto; /* Move the icon to the left */
+    }
+
+    /* Mobile navigation menu */
+    header nav {
+        position: absolute;
+        top: 70px;
+        left: -100%;
+        width: 100%;
+        background: rgba(8, 8, 8, 0.9);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        transition: left 0.3s ease-in-out;
+        z-index: 999;
+    }
+
+    header nav a {
+        margin: 10px 0;
+        font-size: 1.2rem;
+    }
+
+    nav.active {
+        left: 0;
+        text-decoration: none;
+
+    }
+
+    /* Style for the main content */
+    main {
+        width: 100%;
+        padding: 10px;
+        margin-top: 70px;
+    }
+
+    /* Move the text under the image in responsive mode */
+    .prest {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .prest img {
+        width: 100%;
+        max-width: 100%;
+        height: auto;
+    }
+
+    .text-content {
+        margin-top: 20px;
+        text-align: center;
+    }
+
+    /* Skill boxes full width on mobile */
+    .skill-box {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    /* Interests section */
+    .icon-box {
+        display: flex;
+        align-items: center;
+        margin-bottom: 20px;
+    }
+
+    .icon-box i {
+        font-size: 2rem;
+        margin-right: 10px;
+    }
+}
+
+/* Hide the menu icon by default */
+.bx-menu {
+    display: none;
+}
+/* Styles pour la section des intérêts */
+.interests {
+    padding: 60px 0;
+    background: rgba(8, 8, 8, 0.5);
+    border-radius: 10px;
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.section-title h2 {
+    font-size: 2rem;
+    color: #fff;
+}
+
+.icon-box {
+    background: rgba(8, 8, 8, 0.7);
+    border-radius: 10px;
+    padding: 20px;
+    text-align: center;
+    margin-bottom: 20px;
+    color: #fff;
+    transition: background 0.3s ease;
+}
+
+.icon-box:hover {
+    background: rgba(8, 8, 8, 0.8);
+}
+
+.icon-box i {
+    font-size: 40px;
+    color: #f39c12;
+    margin-bottom: 10px;
+}
+
+.icon-box h4 {
+    margin-bottom: 10px;
+    font-size: 1.5rem;
+    color: #fff;
+}
+
+.icon-box p {
+    font-size: 1rem;
+    color: #ddd;
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+    .icon-box {
+        padding: 15px;
+    }
+
+    .icon-box i {
+        font-size: 30px;
+    }
+
+    .icon-box h4 {
+        font-size: 1.25rem;
+    }
+
+    .icon-box p {
+        font-size: 0.875rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .section-title h2 {
+        font-size: 1.5rem;
+    }
+
+    .icon-box i {
+        font-size: 25px;
+    }
+
+    .icon-box h4 {
+        font-size: 1.125rem;
+    }
+
+    .icon-box p {
+        font-size: 0.75rem;
+    }
+}
+/* Styles pour la section des intérêts */
+.interests {
+    padding: 60px 0;
+    background: rgba(8, 8, 8, 0.5);
+    border-radius: 10px;
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.section-title h2 {
+    font-size: 2rem;
+    color: #fff;
+    margin: 0;
+}
+
+.icon-box {
+    background: rgba(8, 8, 8, 0.7);
+    border-radius: 10px;
+    padding: 20px;
+    text-align: center;
+    margin-bottom: 20px;
+    color: #fff;
+    transition: background 0.3s ease;
+}
+
+.icon-box:hover {
+    background: rgba(8, 8, 8, 0.8);
+}
+
+.icon-box i {
+    font-size: 40px;
+    color: #f39c12;
+    margin-bottom: 10px;
+}
+
+.icon-box h4 {
+    margin-bottom: 10px;
+    font-size: 1.5rem;
+    color: #fff;
+}
+
+.icon-box p {
+    font-size: 1rem;
+    color: #ddd;
+}
+
+/* Media Queries */
+@media (max-width: 992px) {
+    .icon-box {
+        padding: 15px;
+    }
+
+    .icon-box i {
+        font-size: 35px;
+    }
+
+    .icon-box h4 {
+        font-size: 1.25rem;
+    }
+
+    .icon-box p {
+        font-size: 0.875rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .section-title h2 {
+        font-size: 1.75rem;
+    }
+
+    .icon-box i {
+        font-size: 30px;
+    }
+
+    .icon-box h4 {
+        font-size: 1.125rem;
+    }
+
+    .icon-box p {
+        font-size: 0.75rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .section-title h2 {
+        font-size: 1.5rem;
+    }
+
+    .icon-box i {
+        font-size: 25px;
+    }
+
+    .icon-box h4 {
+        font-size: 1rem;
+    }
+
+    .icon-box p {
+        font-size: 0.75rem;
+    }
+}
+.card-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    max-width: 1250px;
+    margin: 150px auto;
+    padding: 20px;
+    gap: 20px;
+    
+}
+.card-list .card-item {
+    background: #fff;
+    padding: 26px;
+    border-radius: 8px;
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.04);
+    list-style: none;
+    cursor: pointer;
+    text-decoration: none;
+    border: 2px solid transparent;
+    transition: border 0.5s ease;
+    background-color: rgba(112, 110, 110, 0.5);
+    backdrop-filter: blur(10px);
+}
+.card-list .card-item:hover {
+    border: 2px solid #000;
+}
+.card-list .card-item img {
+    width: 100%;
+    aspect-ratio: 16/9;
+    border-radius: 8px;
+    object-fit: cover;
+}
+.card-list span {
+    display: inline-block;
+    background: #F7DFF5;
+    margin-top: 32px;
+    padding: 8px 15px;
+    font-size: 0.75rem;
+    border-radius: 50px;
+    font-weight: 600;
+}
+.card-list .developer {
+    background-color: #F7DFF5; 
+    color: #B22485;
+}   
+.card-list .designer {
+    background-color: #d1e8ff;
+    color: #2968a8;
+}
+.card-list .editor {
+    background-color: #d6f8d6; 
+    color: #205c20;
+}
+.card-item h3 {
+    color: white;
+    font-size: 1.438rem;
+    margin-top: 28px;
+    font-weight: 600;
+}
+.card-item .arrow {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transform: rotate(-35deg);
+    height: 40px;
+    width: 40px;
+    color: #000;
+    border: 1px solid #000;
+    border-radius: 50%;
+    margin-top: 40px;
+    transition: 0.2s ease;
+}
+.card-list .card-item:hover .arrow  {
+    background: #000;
+    color: #fff; 
+}
+@media (max-width: 1200px) {
+    .card-list .card-item {
+        padding: 15px;
+    }
+}
+@media screen and (max-width: 980px) {
+    .card-list {
+        margin: 0 auto;
+    }
+}
+.containers {
+    margin-bottom: 20px; /* Réduire l'espacement entre les sections */
+}
+
+.skill-box {
+    margin-bottom: 10px; /* Réduire l'espacement entre les barres de compétences */
+}
+
+.card-list {
+    display: flex;
+    justify-content: space-between;
+    gap: 15px; /* Réduire l'espacement entre les cartes */
+}
+
+.card-item {
+    margin-bottom: 0; /* Supprimer tout espace vertical inutile */
+    flex: 1; /* Assurer que les cartes soient alignées */
+}
+.containers {
+    margin-bottom: 20px; /* Réduire l'espacement entre les sections */
+}
+
+.skill-box {
+    margin-bottom: 10px; /* Réduire l'espacement entre les barres de compétences */
+}
+
+.card-list {
+    display: flex;
+    justify-content: space-between;
+    gap: 15px; /* Réduire l'espacement entre les cartes */
+}
+
+.card-item {
+    margin-bottom: 0; /* Supprimer tout espace vertical inutile */
+    flex: 1; /* Assurer que les cartes soient alignées */
+}
+
+
+    </style>
+</head>
+<body>
+    <header>
+        <a href="#" class="logo"style="text-decoration: none;"><span>Oumar</span> Diané</a>
+        <span class="menu-btn" id="menu-btn"><i class="bx bx-menu"></i></span>
+
+        <nav id="navbar">
+            <a href="A Propos.html" style="text-decoration: none;">À propos</a>
+            <a href="Education.html"style="text-decoration: none;">Éducation</a>
+            <a href="Service.html"style="text-decoration: none;">Services</a>
+            
+            <a href="reel.html"style="text-decoration: none;">Réalisations</a>
+            <a href="contact.php"style="text-decoration: none;">Contact</a>
+        </nav>
+    </header>
+
+    <main>
+        <section class="prest">
+            <img src="Images/Black and White Pattern Photo Profile Instagram Post.png" alt="Profile Image">
+            <div class="text-content">
+                <h1>Jeune Talent en Développement Full Stack et Innovation Technologique</h1>
+                <p>Un jeune informaticien passionné par l'innovation technologique, spécialisé en développement full stack, j'apporte mon expertise pour transformer les entreprises à l'ère du numérique. Grâce à une maîtrise complète des technologies modernes, je suis dédié à l'amélioration des systèmes et des processus pour une performance optimale.</p>
+                <div class="row">
+                    <div class="col-lg-6">
+                        <ul>
+                            <li><i class="bi bi-chevron-right"></i> <strong>Âge :</strong> <span>22 ans</span></li>
+                            <li><i class="bi bi-chevron-right"></i> <strong>Niveau d'Étude :</strong> <span>Licence</span></li>
+                            <li><i class="bi bi-chevron-right"></i> <strong>mail :</strong> <span><a href="mailto:oumardiane399@gmail.com">oumardiane399@gmail.com</a></span></li>
+                            <li><i class="bi bi-chevron-right"></i> <strong>Freelance :</strong> <span>Disponible</span></li>
+                        </ul>
+                    </div>
+                    <div class="col-lg-6">
+                        <ul>
+                            <li><i class="bi bi-chevron-right"></i> <strong>Anniversaire :</strong> <span>23 Oct 2002</span></li>
+                            <li><i class="bi bi-chevron-right"></i> <strong>Téléphone :</strong> <span><a href="tel:+2120721976288">+212 07 21 97 62 88</a></span></li>
+                            <li><i class="bi bi-chevron-right"></i> <strong>Ville :</strong> <span>Casablanca, Belvedere</span></li>
+                        </ul>
+                    </div>
+                </div>
+                <p>Ingénieur Logiciel spécialisé dans les langages HTML5, CSS3, PHP et JavaScript, avec une expertise approfondie dans la conception d'applications bureautiques. Je maîtrise également des technologies avancées telles que Python, Java et C#, et possède des compétences en développement de logiciels pour offrir des solutions robustes et innovantes.</p>
+            </div>
+        </section>
+        <h2 style="color: #fff;font-size: 55px;text-align: center;">Mes Objectifs:</h2>
+                                                                                                                               
+        <section class="conts">
+
+            <div class="counts container">
+
+                <div class="row">
+                    <div class="col-lg-3 col-md-6">
+                        <div class="count-box">
+                            <i class="bi bi-emoji-smile"></i>
+                            <div class="emoji-number-container">
+                                <span class="emoji">😊</span>
+                                <span data-purecounter-start="0" data-purecounter-end="232" data-purecounter-duration="22" class="purecounter number"></span>
+                            </div>
+                            <p style="color: #fff;">Sourires Clients</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6 mt-5 mt-md-0">
+                        <div class="count-box">
+                            <i class="bi bi-journal-richtext"></i>
+                            <div class="emoji-number-container">
+                                <span class="emoji">🔧</span>
+                                <span data-purecounter-start="0" data-purecounter-end="521" data-purecounter-duration="10" class="purecounter number"></span>
+                            </div>
+                            <p style="color: #fff;">Fournir des solutions personnalisées</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6 mt-5 mt-lg-0">
+                        <div class="count-box">
+                            <i class="bi bi-headset"></i>
+                            <div class="emoji-number-container">
+                                <span class="emoji">🚀</span>
+                                <span data-purecounter-start="0" data-purecounter-end="1463" data-purecounter-duration="12" class="purecounter number"></span>
+                            </div>
+                            <p style="color: #fff;">Participer à l'innovation technologique</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6 mt-5 mt-lg-0">
+                        <div class="count-box">
+                            <i class="bi bi-award"></i>
+                            <div class="emoji-number-container">
+                                <span class="emoji">🔍</span>
+                                <span data-purecounter-start="0" data-purecounter-end="24" data-purecounter-duration="9" class="purecounter number"></span>
+                            </div>
+                            <p style="color: #fff;">Promouvoir la transparence et la communication</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="containers">
+            <h2 style="color: #fff;" class="skills-title">Mes Compétences</h2>
+            <div class="skill-box">
+                <span class="title">HTML</span>
+                <div class="skill-bar">
+                    <span class="skill-per html">
+                        <span class="tooltip">90%</span>
+                    </span>
+                </div>
+            </div>
+            <div class="skill-box">
+                <span class="title">CSS</span>
+                <div class="skill-bar">
+                    <span class="skill-per css">
+                        <span class="tooltip">80%</span>
+                    </span>
+                </div>
+            </div>
+            <div class="skill-box">
+                <span class="title">JavaScript</span>
+                <div class="skill-bar">
+                    <span class="skill-per javascript">
+                        <span class="tooltip">50%</span>
+                    </span>
+                </div>
+            </div>
+            <div class="skill-box">
+                <span class="title">PHP</span>
+                <div class="skill-bar">
+                    <span class="skill-per php">
+                        <span class="tooltip">50%</span>
+                    </span>
+                </div>
+            </div>
+            <div class="skill-box">
+                <span class="title">Python</span>
+                <div class="skill-bar">
+                    <span class="skill-per python">
+                        <span class="tooltip">80%</span>
+                    </span>
+                </div>
+            </div>
+            <div class="skill-box">
+                <span class="title">Java</span>
+                <div class="skill-bar">
+                    <span class="skill-per java">
+                        <span class="tooltip">85%</span>
+                    </span>
+                </div>
+            </div>
+            <div class="skill-box">
+                <span class="title">C#</span>
+                <div class="skill-bar">
+                    <span class="skill-per csharp">
+                        <span class="tooltip">70%</span>
+                    </span>
+                </div>
+            </div>
+        </div>
+        <h2 style="color: #fff;font-size: 55px;text-align: center;">Mes interets</h2>
+
+        <div class="card-list">
+            
+            <a href="#" class="card-item">
+                <img src="images/deve.jpg" alt="Card Image">
+                <span class="developer">Développement</span>
+                <h3>Je développe des logiciels adaptés à vos besoins spécifiques.</h3>
+                <div class="arrow">
+                    <i class="fas fa-arrow-right card-icon"></i>
+                </div>
+            </a>
+            <a href="#" class="card-item">
+                <img src="images/inno.jpg" alt="Card Image">
+                <span class="designer">Innovation</span>
+                <h3>Je suis à la pointe de la technologie pour vous offrir les solutions les plus récentes.</h3>
+                <div class="arrow">
+                    <i class="fas fa-arrow-right card-icon"></i>
+                </div>
+            </a>
+            <a href="#" class="card-item">
+                <img src="images/49053.jpg" alt="Card Image">
+                <span class="editor">Support</span>
+                <h3>Mon support est toujours disponible pour répondre à vos questions et résoudre vos problèmes.</h3>
+                <div class="arrow">
+                    <i class="fas fa-arrow-right card-icon"></i>
+                </div>
+            </a>
+        </div>
+        <footer class="footer">
+            <div class="container text-center">
+                <p style="color: black;">&copy; 2024 Oumar Diané - Tous droits réservés</p>
+                <div class="social-icons">
+                    <a href="https://web.facebook.com/pdgoumar.diane/"><i class="bx bxl-facebook"></i></a>
+                    <a href="tel:+2120721976288"><i class="bx bxl-whatsapp"></i></a>
+    
+                    <a href="https://www.linkedin.com/in/oumar-diane-173a53266/"><i class="bx bxl-linkedin"></i></a>
+                    <a href="https://www.instagram.com/pdgoumarkoop/"><i class="bx bxl-instagram"></i></a>
+                </div>
+            </div>
+        </footer>
+    </main>
+
+    <script>
+        document.getElementById('menu-btn').addEventListener('click', function() {
+            const navbar = document.getElementById('navbar');
+            navbar.classList.toggle('active');
+        });
+    </script>
+</html>

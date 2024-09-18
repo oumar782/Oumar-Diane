@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mon Éducation</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css">
+    <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.min.js"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+        * {
+            box-sizing: border-box;
+            font-family: "Poppins", sans-serif;
+        }
+
+        body {
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(to bottom, #000, #fff);
+            margin: 0;
+        }
+
+
+        main {
+            width: 90%;
+            max-width: 1350px;
+            background-color: rgba(8, 8, 8, 0.5);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 4px 6px rgba(27, 27, 27, 0.1);
+            border-radius: 10px;
+            overflow: hidden;
+            padding: 2rem;
+            margin-top: 4rem;
+        }
+
+        h1 {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+            color: #fff;
+            font-weight: 700;
+        }
+
+        h1 span {
+            color: var(--main-color);
+        }
+
+        .timelines {
+            max-width: 900px;
+            margin: auto;
+            position: relative;
+        }
+
+        .timelines::before {
+            content: "";
+            position: absolute;
+            width: 5px;
+            height: 100%;
+            background-color: var(--main-color);
+            left: calc(50% - 1px);
+        }
+
+        .timeline {
+            margin-bottom: 50px;
+            position: relative;
+            width: 100%;
+        }
+
+        .timeline:nth-child(odd) {
+            padding-right: calc(50% + 30px);
+        }
+
+        .timedot {
+            height: 21px;
+            width: 21px;
+            background-color: var(--main-color);
+            box-shadow: 0 0 25px var(--main-color);
+            position: absolute;
+            left: calc(50% - 10px);
+            border-radius: 50%;
+            top: 10px;
+        }
+
+        .timedate {
+            font-size: 20px;
+            font-weight: 800;
+            color: white;
+            margin: 6px 0 15px;
+        }
+
+        .timecontent {
+            border: 3px solid var(--main-color);
+            padding: 0 20px;
+            border-radius: 4rem;
+            box-shadow: 0 0 10px var(--main-color);
+            cursor: pointer;
+            transition: 0.3s ease-in-out;
+        }
+
+        .timecontent:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 25px var(--main-color);
+        }
+
+        .timecontent h3 {
+            font-size: 20px;
+            color: white;
+            margin: 0 0 10px;
+            font-weight: 500;
+        }
+
+        .timecontent p {
+            color: white;
+            font-size: 16px;
+            font-weight: 300;
+            line-height: 22px;
+        }
+
+        /* Scrollbar styles */
+        ::-webkit-scrollbar {
+            width: 15px;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background-color: var(--main-color);
+        }
+
+        ::-webkit-scrollbar-track {
+            background-color: #2c3e50;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .timeline:nth-child(odd) {
+                padding-right: 0;
+            }
+
+            .timelines::before {
+                left: 20px;
+                width: 3px;
+            }
+
+            .timedot, .timedotes {
+                width: 15px;
+                height: 15px;
+            }
+
+            .timecontent {
+                padding: 0 10px;
+            }
+
+            h1 {
+                font-size: 2rem;
+            }
+
+            nav a {
+                font-size: 1rem;
+            }
+        }
+
+       
+            main {
+                width: 95%;
+                margin-top: 2rem;
+                padding: 1rem;
+            }
+
+   
+
+
+
+            .content-accueil h1 {
+                font-size: 2.5rem;
+            }
+
+            .content-accueil h3 {
+                font-size: 2rem;
+            }
+
+            .content-accueil p {
+                font-size: 1rem;
+            }
+
+            .accueil-img img {
+                max-width: 200px;
+            }
+
+            .btn-group a {
+                font-size: 0.9rem;
+                padding: 0.5rem;
+            }
+        
+            .bx-menu {
+    display: none;
+}
+            header {
+            background: linear-gradient(to bottom, #333, #000);
+            color: #fff;
+            padding: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        header h1 {
+            margin: 0;
+            font-size: 32px;
+            font-weight: bold;
+        }
+        .logo-container {
+            display: flex;
+            align-items: center;
+        }
+        .logo-container img {
+            max-height: 50px;
+        }
+        .logo-container h1 {
+            margin-left: 10px;
+            font-size: 32px;
+            font-weight: bold;
+            color: antiquewhite;
+        }
+     /* Global styles for mobile responsiveness */
+@media (max-width: 768px) {
+    /* Style for the header */
+    header {
+        flex-direction: row;
+        justify-content: space-between;
+        padding: 10px;
+    }
+
+    /* Menu icon positioned to the left */
+    header .bx-menu {
+        display: block;
+        font-size: 2rem;
+        cursor: pointer;
+        color: white;
+        margin-right: auto; /* Move the icon to the left */
+    }
+
+    /* Mobile navigation menu */
+    header nav {
+        position: absolute;
+        top: 70px;
+        left: -100%;
+        width: 100%;
+        background: rgba(8, 8, 8, 0.9);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        transition: left 0.3s ease-in-out;
+        z-index: 999;
+    }
+
+    header nav a {
+        margin: 10px 0;
+        font-size: 1.2rem;
+    }
+
+    nav.active {
+        left: 0;
+        text-decoration: none;
+    }
+}
+  
+
+    </style>
+</head>
+<body>
+    <header>
+        <a href="#" class="logo" style="text-decoration: none;"><span>Oumar</span> Diané</a>
+        <span class="menu-btn" id="menu-btn"><i class="bx bx-menu"></i></span>
+
+        <nav id="navbar">
+            <a href="A Propos.html"style="text-decoration: none;" >À propos</a>
+            <a href="Education.html"style="text-decoration: none;">Éducation</a>
+            <a href="Service.html"style="text-decoration: none;">Services</a>
+            
+            <a href="reel.html"style="text-decoration: none;">Réalisations</a>
+            <a href="contact.php"style="text-decoration: none;">Contact</a>
+        </nav>
+    </header>
+    <main>
+        <h1 style="margin-top: 40px;">Mon <span>Éducation</span></h1>
+
+        <div class="timelines">
+            <div class="timeline">
+                <div class="timedotes"></div>
+                <div class="timedate">2021</div>
+                <div class="timecontent">
+                    <h3>Baccalauréat en science exacte</h3>
+                    <p>J'ai obtenu mon diplôme de Baccalauréat au Lycée Teriya de Bamako (Mali).</p>
+                </div>
+            </div>
+            <div class="timeline">
+                <div class="timedot"></div>
+                <div class="timedate">2023</div>
+                <div class="timecontent">
+                    <h3>DTS en développement Informatique</h3>
+                    <p>J'ai obtenu mon diplôme de Technicien Spécialisé en <p>Développement Informatique (DTS) à CESASUP de <p>Casablanca (Maroc).</p> </p> <p> Avec mention Bien.</p></p>
+                </div>
+            </div>
+            <div class="timeline">
+                <div class="timedotes"></div></p>
+                <div class="timedate">2024</div>
+                <div class="timecontent">
+                    <h3>Licence en ingénierie Logicielle</h3>
+                    <p>J'ai obtenu mon diplôme de Licence en Ingénierie Logicielle à IMI Développeur de Casablanca (Maroc) avec mention.</p>
+                </div>
+            </div>
+        </div>
+        <footer class="footer">
+            <div class="container text-center">
+                <p style="color: #fff;">&copy; 2024 Oumar Diané - Tous droits réservés</p>
+                <div class="social-icons">
+                    <a href="https://web.facebook.com/pdgoumar.diane/"><i class="bx bxl-facebook"></i></a>
+                    <a href="tel:+2120721976288"><i class="bx bxl-whatsapp"></i></a>
+
+                    <a href="https://www.linkedin.com/in/oumar-diane-173a53266/"><i class="bx bxl-linkedin"></i></a>
+                    <a href="https://www.instagram.com/pdgoumarkoop/"><i class="bx bxl-instagram"></i></a>
+                </div>
+            </div>
+        </footer>
+    </main>
+    <script>
+        document.getElementById('menu-btn').addEventListener('click', function() {
+            const navbar = document.getElementById('navbar');
+            navbar.classList.toggle('active');
+        });
+    </script>
+</body>
+</html>
