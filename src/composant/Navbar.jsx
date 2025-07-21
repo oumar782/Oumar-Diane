@@ -15,7 +15,7 @@ const Navbar = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  // ... existing code ...
+  // Scroll fluide vers la section
   const scrollToSection = (e, href) => {
     e.preventDefault();
     const element = document.querySelector(href);
@@ -29,8 +29,8 @@ const Navbar = () => {
     { name: 'Accueil', href: '#home' },
     { name: 'À propos', href: '#about' },
     { name: 'Compétences', href: '#skills' },
-    { name: 'Projets', href: '#projet' },
-    { name: 'Contact', href: '#Contact' },
+    { name: 'Projets', href: '#projets' },   // <-- corrigé
+    { name: 'Contact', href: '#contact' },   // <-- corrigé
   ];
             
   return (
@@ -54,6 +54,7 @@ const Navbar = () => {
                   href={link.href}
                   className="nav-link"
                   style={{ animationDelay: `${index * 0.1}s` }}
+                  onClick={(e) => scrollToSection(e, link.href)}
                 >
                   <span className="nav-link-text">{link.name}</span>
                   <div className="nav-link-bg"></div>
@@ -85,7 +86,7 @@ const Navbar = () => {
             <a
               key={link.name}
               href={link.href}
-              onClick={() => setIsOpen(false)}
+              onClick={(e) => scrollToSection(e, link.href)}
               className="mobile-nav-link"
               style={{ animationDelay: `${index * 0.1}s` }}
             >

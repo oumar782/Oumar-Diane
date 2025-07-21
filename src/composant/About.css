@@ -126,6 +126,7 @@
     background-clip: text;
     color: transparent;
     position: relative;
+    margin-left: 100px;
   }
   
   .title-underline {
