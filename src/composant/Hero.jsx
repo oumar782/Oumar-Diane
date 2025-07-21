@@ -86,14 +86,14 @@ const Hero = () => {
           </p>
 
 
-            <div className="action-buttons">
-              <button className="primary-btn">
-                Voir mes projets <span>→</span>
-              </button>
-              <button className="secondary-btn">
-                Me contacter
-              </button>
-            </div>
+          <div className="action-buttons">
+  <a href="#projets" className="primary-btn">
+    Voir mes projets <span>→</span>
+  </a>
+  <a href="#contact" className="secondary-btn">
+    Me contacter
+  </a>
+</div>
 
             <div className="info-cards">
               <div className="info-card">

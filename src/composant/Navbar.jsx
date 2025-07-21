@@ -15,14 +15,24 @@ const Navbar = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  // ... existing code ...
+  const scrollToSection = (e, href) => {
+    e.preventDefault();
+    const element = document.querySelector(href);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+    setIsOpen(false); // Ferme le menu mobile si ouvert
+  };
+
   const navLinks = [
     { name: 'Accueil', href: '#home' },
     { name: 'À propos', href: '#about' },
     { name: 'Compétences', href: '#skills' },
-    { name: 'Projets', href: '#Projet' },
-    { name: 'Contact', href: '#contact' },
+    { name: 'Projets', href: '#projet' },
+    { name: 'Contact', href: '#Contact' },
   ];
-
+            
   return (
     <nav className={`navbar ${scrolled ? 'navbar-scrolled' : ''}`}>
       <div className="navbar-container">
