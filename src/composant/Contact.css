@@ -1,16 +1,16 @@
 /* Contact.css - Design Élégant & Professionnel avec Responsive Exceptionnelle */
 
 :root {
-  --primary: #4361ee;
+  --primary: #091e7f;
   --primary-dark: #3a0ca3;
   --primary-light: rgba(67, 97, 238, 0.1);
-  --secondary: #f72585;
+  --secondary: #790808;
   --light: #f8f9fa;
   --dark: #212529;
   --gray: #6c757d;
   --gray-light: #e9ecef;
-  --success: #4cc9f0;
-  --error: #f72585;
+  --success: #1d078f;
+  --error: #890505;
   --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
   --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.12);
   --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.1);
@@ -518,6 +518,8 @@
   .section-title {
     font-size: 2.25rem;
     margin-bottom: 3.5rem;
+    margin-left: -5px;
+
   }
   
   .contact-info-title,
@@ -543,6 +545,8 @@
 @media (max-width: 640px) {
   .section-title {
     font-size: 2rem;
+    margin-left: -5px;
+
   }
   
   .contact-grid {
@@ -584,6 +588,8 @@
   .section-title {
     font-size: 1.8rem;
     margin-bottom: 3rem;
+    margin-left: -5px;
+
   }
   
   .contact-info,
@@ -643,13 +649,18 @@
     height: 4px;
     bottom: -15px;
   }
+  .section-title{
+    margin-left: -5px;
+    ;
+    
+  }
 }
 
 /* Très petits écrans */
 @media (max-width: 360px) {
   .section-title {
     font-size: 1.7rem;
-    margin-left: 10px;
+    margin-left: -5px;
   }
   
   .contact-info-title,
