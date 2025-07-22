@@ -49,7 +49,7 @@ const About = () => {
       <div className="section-container">
         <div className="centered-title-container">
           <div className="section-header">
-            <h2 className="section-title">
+            <h2 className="section-titles">
               À propos de moi
               <div className="title-underline"></div>
             </h2>
