@@ -138,7 +138,7 @@ const About = () => {
                 <div className="info-items">
                   {[
                     { icon: "👤", label: "Nom", value: "Oumar Diane" },
-                    { icon: "🎂", label: "Date de naissance", value: "13 octobre 2002" },
+                    { icon: "🎂", label: "Date de naissance", value: "13 octobre 2000" },
                     { icon: "🌍", label: "Origine", value: "Bamako, Mali" },
                     { icon: "🧑‍💻", label: "Profil", value: "Développeur informatique & Data Analyst" },
                     { icon: "🚀", label: "Objectif", value: "Créer des solutions numériques qui impactent" },

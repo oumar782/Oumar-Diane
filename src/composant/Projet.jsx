@@ -61,7 +61,7 @@ const Projects = () => {
   if (error) return <div className="error">Erreur: {error}</div>;
 
   return (
-    <section id="projects" className="projects-section">
+    <section id="projet" className="projects-section">
       <div className="background-decorations">
         {/* Vos éléments de décoration */}
       </div>

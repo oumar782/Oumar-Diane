@@ -1,18 +1,18 @@
 import React, { useEffect, useRef } from 'react';
 import './Hero.css';
-import heroImage from '../assets/images/moi.jpg';
+import oumarImage from '../assets/images/moi.jpg';
 
-const Hero = () => {
-  const heroRef = useRef(null);
-  const typingRef = useRef(null);
-  const blobRefs = useRef([]);
-  const particleRefs = useRef([]);
+const OumarHero = () => {
+  const oumarHeroRef = useRef(null);
+  const oumarTypingRef = useRef(null);
+  const oumarBlobRefs = useRef([]);
+  const oumarParticleRefs = useRef([]);
 
   useEffect(() => {
     // Animation d'écriture
-    if (typingRef.current) {
+    if (oumarTypingRef.current) {
       const text = "Oumar Diané";
-      const element = typingRef.current;
+      const element = oumarTypingRef.current;
       element.textContent = "";
       let i = 0;
 
@@ -27,28 +27,28 @@ const Hero = () => {
     }
 
     // Animation des éléments
-    blobRefs.current.forEach((blob, index) => {
-      blob.style.animation = `float ${15 + Math.random() * 10}s infinite ${index * 3}s ease-in-out`;
+    oumarBlobRefs.current.forEach((blob, index) => {
+      blob.style.animation = `oumarFloat ${15 + Math.random() * 10}s infinite ${index * 3}s ease-in-out`;
     });
 
-    particleRefs.current.forEach((particle, index) => {
-      particle.style.animation = `floatParticle ${20 + Math.random() * 20}s infinite ${index * 5}s linear`;
+    oumarParticleRefs.current.forEach((particle, index) => {
+      particle.style.animation = `oumarFloatParticle ${20 + Math.random() * 20}s infinite ${index * 5}s linear`;
     });
 
   }, []);
 
   return (
-    <section id="home" className="hero-section">
-      <div className="background-elements">
+    <section id="home" className="oumar-hero-section">
+      <div className="oumar-background-elements">
         {[...Array(5)].map((_, i) => (
-          <div key={`blob-${i}`} ref={el => blobRefs.current[i] = el} className={`blob blob-${i+1}`} />
+          <div key={`oumar-blob-${i}`} ref={el => oumarBlobRefs.current[i] = el} className={`oumar-blob oumar-blob-${i+1}`} />
         ))}
         
         {[...Array(8)].map((_, i) => (
           <div
-            key={`particle-${i}`}
-            ref={el => particleRefs.current[i] = el}
-            className="particle"
+            key={`oumar-particle-${i}`}
+            ref={el => oumarParticleRefs.current[i] = el}
+            className="oumar-particle"
             style={{
               width: `${Math.random() * 10 + 5}px`,
               height: `${Math.random() * 10 + 5}px`,
@@ -59,65 +59,64 @@ const Hero = () => {
           />
         ))}
         
-        <div className="grid-pattern" />
-        <div className="light-effect" />
+        <div className="oumar-grid-pattern" />
+        <div className="oumar-light-effect" />
       </div>
 
-      <div className="section-container">
-        <div className="hero-content-wrapper">
-          <div className="text-content" ref={heroRef}>
-            <div className="status-badge">
-              <div className="status-dot" />
+      <div className="oumar-section-container">
+        <div className="oumar-content-wrapper">
+          <div className="oumar-text-content" ref={oumarHeroRef}>
+            <div className="oumar-status-badge">
+              <div className="oumar-status-dot" />
               <span>Developpeur informatique et Data Analyst</span>
             </div>
 
-            <h2 className="greeting">Bonjour, je m'appelle</h2>
-            <h1 ref={typingRef} className="name-title" />
+            <h2 className="oumar-greeting">Bonjour, je m'appelle</h2>
+            <h1 ref={oumarTypingRef} className="oumar-name-title" />
             
-            <div className="separator">
-              <div className="line" />
-              <div className="dot" />
+            <div className="oumar-separator">
+              <div className="oumar-line" />
+              <div className="oumar-dot" />
             </div>
 
-            <p className="description">
-          Développeur informatique & Data Analyst, passionné par la création de solutions numériques puissantes et accessibles, avec une vision tournée vers l’Afrique et le monde.
-          <br/>
-          <em style={{ color: 'red' }}>« Parce que le code ne change pas que des lignes… il change des vies. »</em>
-          </p>
+            <p className="oumar-description">
+              Développeur informatique & Data Analyst, passionné par la création de solutions numériques puissantes et accessibles, avec une vision tournée vers l'Afrique et le monde.
+              <br/>
+              <em style={{ color: 'var(--oumar-accent)' }}>« Parce que le code ne change pas que des lignes… il change des vies. »</em>
+            </p>
 
+            <div className="oumar-action-buttons">
+              <a href="#projet" className="oumar-primary-btn">
+                Voir mes projets <span>→</span>
+              </a>
+              <a href="#contact" className="oumar-secondary-btn">
+                Me contacter
+              </a>
+            </div>
 
-          <div className="action-buttons">
-  <a href="#projets" className="primary-btn">
-    Voir mes projets <span>→</span>
-  </a>
-  <a href="#contact" className="secondary-btn">
-    Me contacter
-  </a>
-</div>
-
-            <div className="info-cards">
-              <div className="info-card">
-                <span className="label">NÉ LE</span>
-                <span className="value">13 octobre 2002</span>
+            <div className="oumar-info-cards">
+              <div className="oumar-info-card">
+                <span className="oumar-label">NÉ LE</span>
+                <span className="oumar-value">13 octobre 2002</span>
               </div>
-              <div className="info-card">
-                <span className="label">ORIGINE</span>
-                <span className="value">Bamako, Mali</span>
+              <div className="oumar-info-card">
+                <span className="oumar-label">ORIGINE</span>
+                <span className="oumar-value">Bamako, Mali</span>
               </div>
             </div>
           </div>
 
-          <div className="image-content">
-            <div className="image-wrapper">
+          <div className="oumar-image-content">
+            <div className="oumar-image-wrapper">
               <img 
-                src={heroImage} 
+                src={oumarImage} 
                 alt="Oumar Diané" 
-                className="profile-image"
+                className="oumar-profile-image"
               />
-              <div className="image-glow" />
-              <div className="image-halo" />
-              <div className="image-border" />
-              <div className="image-reflection" />
+              <div className="oumar-image-glow" />
+              <div className="oumar-image-halo" />
+              <div className="oumar-image-border" />
+              <div className="oumar-image-reflection" />
             </div>
           </div>
         </div>
@@ -126,4 +125,4 @@ const Hero = () => {
   );
 };
 
-export default Hero; 
+export default OumarHero;
