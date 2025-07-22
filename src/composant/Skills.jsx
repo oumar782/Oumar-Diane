@@ -116,7 +116,7 @@ const Skills = () => {
               key={category.title} 
               className="skills-card"
               ref={el => addToCardRefs(el, index)}
-              style={{ '--delay': `${index * 0.1}s` }}
+              style={{ animationDelay: `${index * 0.1}s` }}
             >
               <div className={category.iconClass}>
                 {category.icon}
@@ -126,7 +126,6 @@ const Skills = () => {
                 {category.skills.map((skill) => (
                   <span key={skill} className="skills-badge">
                     <span className="skills-badge-text">{skill}</span>
-                    <span className="skills-badge-hover"></span>
                   </span>
                 ))}
               </div>
@@ -142,7 +141,11 @@ const Skills = () => {
           
           <div className="skills-progress-container" ref={progressContainerRef}>
             {proficiencyData.map((skill, index) => (
-              <div key={skill.name} className="skills-progress-item" style={{ '--delay': `${0.4 + index * 0.1}s` }}>
+              <div 
+                key={skill.name} 
+                className="skills-progress-item" 
+                style={{ animationDelay: `${0.4 + index * 0.1}s` }}
+              >
                 <div className="skills-progress-info">
                   <span className="skills-progress-name">{skill.name}</span>
                   <span className="skills-progress-percent">{skill.percent}%</span>
@@ -151,10 +154,7 @@ const Skills = () => {
                   <div 
                     className={`skills-progress-bar-fill ${skill.color}`}
                     data-width={`${skill.percent}%`}
-                  >
-                    <div className="skills-progress-bar-shine"></div>
-                    <div className="skills-progress-bar-pulse"></div>
-                  </div>
+                  />
                 </div>
               </div>
             ))}

@@ -3,7 +3,7 @@ import {
   Mail, MapPin, Zap, 
   Check, AlertCircle, X,
   Instagram, Facebook, Linkedin,
-  Send
+  Send, User, MessageSquare
 } from 'lucide-react';
 import './Contact.css';
 
@@ -147,15 +147,23 @@ const Contact = () => {
       )}
 
       <div className="section-container">
-        <h2 className="section-title">Me contacter</h2>
+        <h2 className="section-title">
+          <span className="title-gradient">Me contacter</span>
+        </h2>
 
         <div className="contact-grid">
           {/* Colonne d'informations */}
           <div className="contact-info reveal" ref={contactRef}>
-            <h3 className="contact-info-title">Discutons de votre projet</h3>
+            <div className="info-header">
+              <h3 className="contact-info-title">
+                <span className="title-decoration">Discutons</span> de votre projet
+              </h3>
+              <div className="divider"></div>
+            </div>
+            
             <p className="contact-info-text">
               Vous avez un projet en tête ? N'hésitez pas à me contacter pour en discuter.
-              Je suis toujours ouvert à de nouvelles opportunités et collaborations.
+              Je suis toujours ouvert à de nouvelles opportunités et collaborations créatives.
             </p>
 
             <div className="contact-details">
@@ -165,7 +173,9 @@ const Contact = () => {
                 </div>
                 <div>
                   <h4 className="contact-detail-title">Email</h4>
-                  <p className="contact-detail-text">contact@oumar.dev</p>
+                  <a href="mailto:contact@oumar.dev" className="contact-detail-text">
+                    contact@oumar.dev
+                  </a>
                 </div>
               </div>
 
@@ -186,13 +196,28 @@ const Contact = () => {
                 <div>
                   <h4 className="contact-detail-title">Réseaux sociaux</h4>
                   <div className="social-links">
-                    <a href="#" className="social-link" aria-label="Instagram">
+                    <a 
+                      href="#" 
+                      className="social-link" 
+                      aria-label="Instagram"
+                      data-tooltip="Instagram"
+                    >
                       <Instagram size={20} className="social-icon" />
                     </a>
-                    <a href="#" className="social-link" aria-label="Facebook">
+                    <a 
+                      href="#" 
+                      className="social-link" 
+                      aria-label="Facebook"
+                      data-tooltip="Facebook"
+                    >
                       <Facebook size={20} className="social-icon" />
                     </a>
-                    <a href="#" className="social-link" aria-label="LinkedIn">
+                    <a 
+                      href="#" 
+                      className="social-link" 
+                      aria-label="LinkedIn"
+                      data-tooltip="LinkedIn"
+                    >
                       <Linkedin size={20} className="social-icon" />
                     </a>
                   </div>
@@ -204,55 +229,62 @@ const Contact = () => {
           {/* Formulaire de contact */}
           <div className="contact-form reveal" ref={formRef}>
             <form onSubmit={handleSubmit} className="contact-form-container" noValidate>
-              <div className="form-group">
-                <label htmlFor="name" className="form-label">
-                  Nom <span className="required">*</span>
-                </label>
-                <input
-                  type="text"
-                  id="name"
-                  name="name"
-                  required
-                  value={formData.name}
-                  onChange={handleChange}
-                  className="form-input"
-                  placeholder="Votre nom complet"
-                  disabled={isSubmitting}
-                />
+              <div className="form-header">
+                <h3 className="form-title">
+                  <span className="title-decoration">Envoyez-moi</span> un message
+                </h3>
+                <div className="divider"></div>
               </div>
 
               <div className="form-group">
-                <label htmlFor="email" className="form-label">
-                  Email <span className="required">*</span>
-                </label>
-                <input
-                  type="email"
-                  id="email"
-                  name="email"
-                  required
-                  value={formData.email}
-                  onChange={handleChange}
-                  className="form-input"
-                  placeholder="votre@email.com"
-                  disabled={isSubmitting}
-                />
+                <div className="input-container">
+                  <User size={18} className="input-icon" />
+                  <input
+                    type="text"
+                    id="name"
+                    name="name"
+                    required
+                    value={formData.name}
+                    onChange={handleChange}
+                    className="form-input"
+                    placeholder="Votre nom complet"
+                    disabled={isSubmitting}
+                  />
+                </div>
               </div>
 
               <div className="form-group">
-                <label htmlFor="message" className="form-label">
-                  Message <span className="required">*</span>
-                </label>
-                <textarea
-                  id="message"
-                  name="message"
-                  required
-                  value={formData.message}
-                  onChange={handleChange}
-                  rows={5}
-                  className="form-textarea"
-                  placeholder="Décrivez votre projet en détails..."
-                  disabled={isSubmitting}
-                ></textarea>
+                <div className="input-container">
+                  <Mail size={18} className="input-icon" />
+                  <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    required
+                    value={formData.email}
+                    onChange={handleChange}
+                    className="form-input"
+                    placeholder="votre@email.com"
+                    disabled={isSubmitting}
+                  />
+                </div>
+              </div>
+
+              <div className="form-group">
+                <div className="input-container">
+                  <MessageSquare size={18} className="input-icon textarea-icon" />
+                  <textarea
+                    id="message"
+                    name="message"
+                    required
+                    value={formData.message}
+                    onChange={handleChange}
+                    rows={5}
+                    className="form-textarea"
+                    placeholder="Décrivez votre projet en détails..."
+                    disabled={isSubmitting}
+                  ></textarea>
+                </div>
               </div>
 
               <button
@@ -268,7 +300,7 @@ const Contact = () => {
                   </>
                 ) : (
                   <>
-                    <Send size={18} />
+                    <Send size={18} className="button-icon" />
                     Envoyer le message
                   </>
                 )}
